@@ -1,6 +1,6 @@
 import LinkedList from './linked lists.js';
 
-const test = new LinkedList('my list');
+const test = new LinkedList();
 console.log(test);
 test.append('first');
 console.log(test);
@@ -10,3 +10,4 @@ test.append('third');
 console.log(test);
 test.prepend('fourth');
 console.log(test);
+console.log(test.size());
