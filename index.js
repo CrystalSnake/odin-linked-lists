@@ -8,3 +8,5 @@ test.append('second');
 console.log(test);
 test.append('third');
 console.log(test);
+test.prepend('fourth');
+console.log(test);
