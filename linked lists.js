@@ -45,30 +45,29 @@ class LinkedList {
   }
 
   getHead() {
-    let message = 'List is empty.';
-    if (this.head != null) {
-      message = this.head;
+    if (this.head == null) {
+      return 'List is empty.';
+    } else {
+      return this.head;
     }
-    return message;
   }
 
   getTail() {
-    let message = 'List is empty.';
-    if (this.head != null) {
+    if (this.head == null) {
+      return 'List is empty.';
+    } else {
       let check = this.head;
       do {
         check = this[check];
       } while (this[check] != null);
-      message = check;
+      return check;
     }
-    return message;
   }
 
   getNodeAt(index) {
-    let message = 'List is empty.';
     if (this.head != null) {
       if (this.getSize() < index) {
-        message = 'This list too short';
+        return 'This list too short';
       } else {
         let counter = 0;
         let check = this.head;
@@ -76,16 +75,45 @@ class LinkedList {
           check = this[check];
           counter += 1;
         }
-        message = check;
+        return check;
       }
     }
-    return message;
+    return;
   }
 
   pop() {
-    const length = this.getSize();
-    delete this[this.getTail()];
-    this[this.getNodeAt(length - 1)] = null;
+    if (this.head != null) {
+      if (this[this.head] == null) {
+        delete this[this.head];
+        this.head = null;
+      } else if (this.head != null) {
+        const length = this.getSize();
+        delete this[this.getTail()];
+        this[this.getNodeAt(length - 1)] = null;
+      }
+    }
+  }
+
+  contains(value) {
+    if (this.head == null) {
+      return 'List is empty.';
+    } else {
+      let check = this.head;
+      let found = false;
+      while (check != null) {
+        if (check == value) {
+          found = true;
+          break;
+        }
+        check = this[check];
+      }
+      if (found) {
+        return `${value} is found`;
+      } else {
+        return `${value} is not found`;
+      }
+    }
+    return;
   }
 }
 
