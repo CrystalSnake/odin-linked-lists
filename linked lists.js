@@ -81,6 +81,12 @@ class LinkedList {
     }
     return message;
   }
+
+  pop() {
+    const length = this.getSize();
+    delete this[this.getTail()];
+    this[this.getNodeAt(length - 1)] = null;
+  }
 }
 
 export default LinkedList;
