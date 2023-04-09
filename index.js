@@ -20,3 +20,4 @@ console.log(test.contains('second'));
 console.log(test.contains('third'));
 console.log(test.find('first'));
 console.log(test.find('third'));
+console.log(test.toString());

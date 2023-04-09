@@ -133,6 +133,16 @@ class LinkedList {
       }
     }
   }
+
+  toString() {
+    let message = '';
+    let check = this.head;
+    do {
+      message += ` (${check}) -> `;
+      check = this[check];
+    } while (check != null);
+    return `${message} null`;
+  }
 }
 
 export default LinkedList;
