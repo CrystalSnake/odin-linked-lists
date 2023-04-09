@@ -10,4 +10,6 @@ test.append('third');
 console.log(test);
 test.prepend('fourth');
 console.log(test);
-console.log(test.size());
+console.log(test.getSize());
+console.log(test.getHead());
+console.log(test.getTail());

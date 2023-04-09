@@ -30,7 +30,7 @@ class LinkedList {
     }
   }
 
-  size() {
+  getSize() {
     let check = this.head;
     if (check == null) {
       return 0;
@@ -42,6 +42,26 @@ class LinkedList {
       }
       return counter;
     }
+  }
+
+  getHead() {
+    let message = 'List is empty.';
+    if (this.head != null) {
+      message = this.head;
+    }
+    return message;
+  }
+
+  getTail() {
+    let message = 'List is empty.';
+    if (this.head != null) {
+      let check = this.head;
+      do {
+        check = this[check];
+      } while (this[check] != null);
+      message = check;
+    }
+    return message;
   }
 }
 
