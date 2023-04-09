@@ -107,13 +107,31 @@ class LinkedList {
         }
         check = this[check];
       }
+      return found;
+    }
+  }
+
+  find(value) {
+    if (this.head == null) {
+      return 'List is empty.';
+    } else {
+      let check = this.head;
+      let found = false;
+      let counter = 1;
+      while (check != null) {
+        if (check == value) {
+          found = true;
+          break;
+        }
+        check = this[check];
+        counter += 1;
+      }
       if (found) {
-        return `${value} is found`;
+        return counter;
       } else {
-        return `${value} is not found`;
+        return null;
       }
     }
-    return;
   }
 }
 
