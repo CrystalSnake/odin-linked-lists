@@ -63,6 +63,24 @@ class LinkedList {
     }
     return message;
   }
+
+  getNodeAt(index) {
+    let message = 'List is empty.';
+    if (this.head != null) {
+      if (this.getSize() < index) {
+        message = 'This list too short';
+      } else {
+        let counter = 0;
+        let check = this.head;
+        while (counter < index - 1) {
+          check = this[check];
+          counter += 1;
+        }
+        message = check;
+      }
+    }
+    return message;
+  }
 }
 
 export default LinkedList;
