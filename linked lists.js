@@ -143,6 +143,16 @@ class LinkedList {
     } while (check != null);
     return `${message} null`;
   }
+
+  insertAt(value, index) {
+    if (this.getSize() < index) {
+      this.append(value);
+    } else {
+      const node = new Node(value);
+      this[node.value] = this[this.getNodeAt(index)];
+      this[this.getNodeAt(index)] = node.value;
+    }
+  }
 }
 
 export default LinkedList;
