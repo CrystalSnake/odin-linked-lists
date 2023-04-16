@@ -153,6 +153,24 @@ class LinkedList {
       this[this.getNodeAt(index)] = node.value;
     }
   }
+
+  removeAt(index) {
+    if (this[this.head] != null) {
+      if (this.getSize() < index) {
+        this.pop();
+      } else {
+        let counter = 0;
+        let check = this.head;
+        while (counter < index - 2) {
+          check = this[check];
+          counter += 1;
+        }
+        const next = this[check];
+        this[check] = this[next];
+        delete this[next];
+      }
+    }
+  }
 }
 
 export default LinkedList;

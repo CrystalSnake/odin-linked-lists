@@ -1,13 +1,13 @@
 import LinkedList from './linked lists.js';
 
 const test = new LinkedList();
-//console.log(test);
+console.log(test);
 test.append('first');
-//console.log(test);
+console.log(test);
 test.append('second');
-//console.log(test);
+console.log(test);
 test.append('third');
-//console.log(test);
+console.log(test);
 test.prepend('fourth');
 console.log(test);
 console.log(`Size of list is ${test.getSize()}`);
@@ -21,5 +21,8 @@ console.log(test.contains('third'));
 console.log(test.find('first'));
 console.log(test.find('third'));
 console.log(test.toString());
-console.log(test.insertAt('new node', 2));
+test.insertAt('new node', 2);
+console.log(test.toString());
+test.removeAt(3);
+console.log(test);
 console.log(test.toString());
